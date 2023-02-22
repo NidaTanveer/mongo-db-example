@@ -30,7 +30,6 @@ once the schema is inserted an *_id which is ObjectId* is automatically created 
 ```
 5. Inorder to **insert multiple records** 
 ```javascript
-
 ```
 
 
