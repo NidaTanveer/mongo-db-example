@@ -28,18 +28,32 @@ db.MobileFeature.insertOne({"mobileName" : "samsung",
 
 once the schema is inserted an *_id which is ObjectId* is automatically created for each schema
 ```
-5. Inorder to **insert multiple records** 
+5. Inorder to **insert multiple records** use **array**
 ```javascript
+db.MobileFeature.insertMany(
+[
+  {
+  "mobileName" : "samsung",
+  "mobileColour" : "blue",
+  "mobileRam" : 256,
+  "mobileOs" : "android"
+},
+{"mobileName" : "blueberry",
+  "mobileColour" : "blue",
+  "mobileRam" : 560,
+  "mobileOs" : "android"
+}]
+)
 ```
 
 
 6. The below command to **Read all the data**
-` db.collectionname.find({}) `
+` db.collectionname.find() `
 
 To read data basing on specific value
 `db.MobileFeature.find({"mobileOs":"androidOs"})`
 
-7. Inorder to **update** the schema it contains two parts the first one is the value basing on which values will be updates and the second one is where using $set the values will be updated  
+7. Inorder to **update** the schema it contains two parts the first one is the value basing on which values will be updates and the second one by using $set the values to be updated  
 ```javascript
 db.MobileFeature.updateOne({ _id : ObjectId("63f5ed537083c56834f0a383")},
 {
@@ -73,22 +87,3 @@ db.MobileFeature.deleteOne({ _id : ObjectId("63f5ecc27083c56834f0a383")})
 ```javascript
 db.MobileFeature.deleteMany({})
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
