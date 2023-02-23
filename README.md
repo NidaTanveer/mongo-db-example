@@ -87,3 +87,44 @@ db.MobileFeature.deleteOne({ _id : ObjectId("63f5ecc27083c56834f0a383")})
 ```javascript
 db.MobileFeature.deleteMany({})
 ```
+
+
+
+### Nested object and arrays
+### Array
+Here mobileapps are a list
+
+```json
+db.MobileFeature.insertOne({
+  "mobilename" : "iphone",
+  "mobileram" : 8,
+  "mobileApps" : ["Google","notepad"]
+  })
+```
+  
+Here we are defining each app property as a object
+
+### object
+
+```json
+db.MobileFeature.insertMany([
+{
+  "mobilename" : "iphone",
+  "mobileram" : 8,
+  "mobileApps" : ["Google","notepad"],
+  "Google" : {
+    "appversion" : 14,
+    "appUpdated" : true
+  }
+},
+{
+  "mobilename" : "iphone1",
+  "mobileram" : 8,
+  "mobileApps" : ["Google","notepad"],
+  "Notepad":{
+    "appversion": 2,
+    "appupdated": false
+  }
+}
+])
+```
